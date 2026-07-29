@@ -81,7 +81,9 @@ pages/
     └── Filhos-Issacar.html
 
 index.html
+```
 
+---
 
 ## Tecnologias utilizadas
 
