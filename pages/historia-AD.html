@@ -4,25 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/Style/historia-AD.css">
     <link rel="stylesheet" href="/assets/Style/global.css">
+    <link rel="stylesheet" href="/assets/Style/historia-AD.css">
     <link rel="icon" href="/assets/Img/Pagina-Inicial/Logo-Pagina-Inicial.jpg">
     <title>História Assembleia de Deus Panambi</title>
 </head>
 
 <body>
-    <header>
+    <header class="site-header">
         <div class="div-logo">
             <a href="/index.html">
                 <img src="/assets/Img/Pagina-Inicial/Logo-Pagina-Inicial2.jpg" alt="logo Assembleia de Deus">
             </a>
         </div>
-        <div class="menu">
 
-            <a href="/pages/historia-AD.html">Nossa História</a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menu-principal">
+            &#9776;
+        </button>
+
+        <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+            <a href="/pages/historia-AD.html" aria-current="page">Nossa História</a>
 
             <div class="menu-item">
-                <span>Projetos</span>
+                <button class="submenu-toggle" type="button" aria-expanded="false">Projetos</button>
                 <div class="submenu">
                     <a href="/pages/Projetos/Filhos-Issacar.html">Filhos de Issacar</a>
                     <a href="#">Projeto 2</a>
@@ -30,7 +35,7 @@
             </div>
 
             <div class="menu-item">
-                <span>Departamentos</span>
+                <button class="submenu-toggle" type="button" aria-expanded="false">Departamentos</button>
                 <div class="submenu">
                     <a href="#">Jovens</a>
                     <a href="#">Crianças</a>
@@ -39,32 +44,32 @@
             </div>
 
             <div class="menu-item">
-                <span>Templos</span>
+                <button class="submenu-toggle" type="button" aria-expanded="false">Templos</button>
                 <div class="submenu">
                     <a href="#">Templo Centro</a>
                     <a href="#">Templo Bairro</a>
                 </div>
             </div>
 
-            <a href="pages/diretoria.html">Diretoria</a>
-            <a href="pages/doacoes.html">Doações</a>
+            <a href="/pages/diretoria.html">Diretoria</a>
+            <a href="/pages/doacoes.html">Doações</a>
             <a href="/pages/contato.html">Contato</a>
-
-        </div>
+        </nav>
     </header>
+
     <main>
         <section class="secao secao-cinza">
-            <div class="secao-container">
-                <h2>
-                    Surgimanto da IEAD em Panambi - RS
-                </h2>
+            <div class="secao-container historia-conteudo">
+                <h1>Surgimanto da IEAD em Panambi - RS</h1>
+
                 <p>
                     Em fevereiro de 1964, a igreja de Ijuí, lederada pelo <b>Pastor Alberto Kolenda</b>, enviou o
                     evangelista <b>Alceu Moreira Vasgas</b> para começar a obra missionária na pequena cidade de
                     Panambi. Ele, a esposa e os seis filhos foram morar em um porão dos fundos de um posto de gasolina.
                     A luta era grande, mas a vontade de fazer a obra de Deus crescer foi maior.
                 </p>
-                <div class="container">
+
+                <div class="container historia-bloco">
                     <p>
                         Em 12 de Abril de 1964, Alceu alugou uma casa no bairro Pavão e realizou o primeiro culto
                         oficial, com a ajuda de músicos que vieram de Ijuí para colaborar com o novo campo que nascia,
@@ -74,10 +79,11 @@
                     <div class="container-imagem">
                         <figure>
                             <img src="/assets/Img/historia-AD/figura-1.jpeg" alt="registo culto de 1968">
+                            <figcaption>Figura 1 - Registro de um culto realizado na Vila Nova, em 1968</figcaption>
                         </figure>
-                        <figcaption>Figura 1 - Registro de um culto realizado na Vila Nova, em 1968</figcaption>
                     </div>
                 </div>
+
                 <p>
                     O primeiro batismo aconteceu no dia 21 de Março de 1965, no <b>Rio Fiúza</b>, com 26 novos irmãos
                     descendo às águas batismais, tendo a primeira Santa Ceia sendo realizada na nova casa do irmão
@@ -85,6 +91,7 @@
                     de uma maior estrutura, então alugaram um porão onde hoje é o <b>Bairro Fátima</b>, e ali realizavam
                     os Cultos.
                 </p>
+
                 <p>
                     Em dexembro de 1967 o irmão Alceu foi transferido, então o Pastor Kolenda enviou o evangelista
                     <b>Vilmar B. da Cruz</b> para assumir a igreja na cidade de Panambi. Este, por sua vez, coprou uma
@@ -95,7 +102,8 @@
                     esteve no ar até 2018. Nesses 40 anos, a dereção desse trabalho esteve nas mãos do irmão <b>Rubens
                         Portes Batista</b>.
                 </p>
-                <div class="container">
+
+                <div class="container historia-bloco">
                     <p>
                         O primeiro templo da Assembleia de deus foi construido por meio da doação de um terrenos, feita
                         pelo irmão <strong>Maurício Pithan de Souza</strong>, e construída com os materiais da casa do
@@ -110,17 +118,19 @@
                     <div class="container-imagem">
                         <figure>
                             <img src="/assets/Img/historia-AD/fugura-2.jpeg" alt="Quadro de obreiros de 1970">
+                            <figcaption>Figura 2 - Quadro de Obreiros de 1970</figcaption>
                         </figure>
-                        <figcaption>Figura 2 - Quadro de Obreiros de 1970</figcaption>
                     </div>
                 </div>
+
                 <p>
                     No dia 4 de janeiro de 1973, o presbítero Asselino Bernardo Alves é empossado como
                     encarregado do campo de Panambi, pelo Pastor João Ferreira Filho. A obra permaneceu
                     crescendo e, em 3 de aio de 1975 o primeiro carro da igreja é comprado, sendo um Aero Willis
                     Ford ano 70.
                 </p>
-                <div class="container">
+
+                <div class="container historia-bloco">
                     <p>
                         Com a necessidade notória de um novo
                         templo que comportasse todos os membros, os
@@ -137,11 +147,12 @@
                     <div class="container-imagem">
                         <figure>
                             <img src="/assets/Img/historia-AD/Figura-3.jpeg" alt="Quadro de obreiros de 1970">
+                            <figcaption>Figura 3 - Construção da Sede na Rua Andrade Neves</figcaption>
                         </figure>
-                        <figcaption>Figura 3 - Construção da Sede na Rua Andrade Neves</figcaption>
                     </div>
                 </div>
-                <div class="container">
+
+                <div class="container historia-bloco">
                     <p>
                         Um fato fundamental para o desenvolvimento da IEAD na
                         cidade de Panambi aconteceu no dia 1° de junho de 1982, onde
@@ -159,11 +170,12 @@
                     <div class="container-imagem">
                         <figure>
                             <img src="/assets/Img/historia-AD/figura-4.jpeg"
-                                alt="Ineuguração da Templo na rua andrade neves" height="250px">
+                                alt="Ineuguração da Templo na rua andrade neves">
+                            <figcaption>Figura 4 - Inauguração do Templo na Rua Andrade Neves</figcaption>
                         </figure>
-                        <figcaption>Figura 4 - Inauguração do Templo na Rua Andrade Neves</figcaption>
                     </div>
                 </div>
+
                 <p>
                     Em 1991, o segundo pastor presidente assume o campo da
                     cidade: o Pr. Antônio Milton Cardias, com o Pr. Marceliano Nogueira sendo segundo pastor
@@ -175,6 +187,7 @@
                     permaneceu investindo, levando missionários para o Paraguai, Nordeste do Brasil e outras
                     cidades de nosso estado.
                 </p>
+
                 <p>
                     Como resultado de anos investindo em missões, por amor às almas perdidas, a igreja matriz
                     já não conseguia comportar todos os seus membros, principalmente em cultos de Santa Ceia
@@ -186,7 +199,7 @@
                     irmãos.
                 </p>
 
-                <div class="container">
+                <div class="container historia-bloco">
                     <p>
                         Na época, o pastor presidente, juntamente
                         com o prefeito da cidade, Sr. Miguel Schmitt
@@ -202,11 +215,12 @@
                     <div class="container-imagem">
                         <figure>
                             <img src="/assets/Img/historia-AD/figura-5.jpeg" alt="Registro interior da igreja">
+                            <figcaption>Figura 5 - Registro do interior da igreja na Rua Andrade Neves</figcaption>
                         </figure>
-                        <figcaption>Figura 5 - Registro do interior da igreja na Rua Andrade Neves</figcaption>
                     </div>
                 </div>
-                <div class="container">
+
+                <div class="container historia-bloco">
                     <p>
                         O Pr. Milton Cardias é jubilado, então, o terceiro pastor-presidente assume no dia 20 de
                         junho de 2019, oriundo de Rio Grande – RS. O Pr. Valdir Rodrigues Junior é empossado da
@@ -220,11 +234,12 @@
                         <figure>
                             <img src="/assets/Img/historia-AD/figura-6.png"
                                 alt="Imagem novo templo Av. Presidente Kennedy">
+                            <figcaption>Figura 6 - novo Templo, localizado na Avenida Presidente Kennedy, 1505. Bairro
+                                Arco-Íris</figcaption>
                         </figure>
-                        <figcaption>Figura 6 - novo Templo, localizado na Avenida Presidente Kennedy, 1505. Bairro
-                            Arco-Íris</figcaption>
                     </div>
                 </div>
+
                 <p>
                     Em resumo, vê-se em toda a história da Igreja Assembleia de Deus na cidade de Panambi,
                     pessoas de fé, que trabalharam sem cessar para que a denominação crescesse e chegasse até
@@ -232,6 +247,7 @@
                     e dando força para que eles suportassem as perseguições, preconceitos e rejeições, deixando
                     para nós exemplos de persistência, coragem e devoção.
                 </p>
+
                 <p>
                     Atualmente, a igreja conta com mais de 2.200 membros, o Pastor Presidente mais 6
                     pastores filiados a CIEPADERGS, 67 Evangelistas, 79 Presbíteros, 154 Diáconos e 21
@@ -241,12 +257,13 @@
                 </p>
             </div>
         </section>
+
         <section class="secao secao-branca">
             <div class="secao-container">
-                <h2 style="text-align: center;">
+                <h2 class="titulo-centralizado">
                     Hoje a igreja possui diversos departamentos. Alguns são:
                 </h2>
-                <ul>
+                <ul class="objetivos">
                     <li>
                         <h3>DEFADEP (Departamento da Família)</h3>
                         <p>
@@ -258,6 +275,28 @@
             </div>
         </section>
     </main>
+
+    <script>
+        const botaoMenu = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+        const botoesSubmenu = document.querySelectorAll(".submenu-toggle");
+
+        botaoMenu.addEventListener("click", () => {
+            const menuAberto = menu.classList.toggle("ativo");
+            botaoMenu.setAttribute("aria-expanded", String(menuAberto));
+            botaoMenu.setAttribute("aria-label", menuAberto ? "Fechar menu" : "Abrir menu");
+        });
+
+        botoesSubmenu.forEach((botao) => {
+            botao.addEventListener("click", () => {
+                if (window.innerWidth <= 768) {
+                    const item = botao.closest(".menu-item");
+                    const aberto = item.classList.toggle("submenu-aberto");
+                    botao.setAttribute("aria-expanded", String(aberto));
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

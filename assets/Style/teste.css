@@ -1,0 +1,890 @@
+/* ==========================================================================
+   FONTES
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+
+/* ==========================================================================
+   VARIÁVEIS DO PROJETO
+   Facilita a alteração de cores, sombras e tamanhos gerais.
+   ========================================================================== */
+
+:root {
+    --cor-branca: #ffffff;
+    --cor-cinza-claro: #d8d7d7;
+    --cor-cinza-menu: #f7f7f7;
+    --cor-texto: #1f1f1f;
+    --cor-texto-secundario: #2c2b2b;
+    --cor-borda: #dddddd;
+
+    --sombra-menu: 0 4px 8px rgba(0, 0, 0, 0.28);
+    --sombra-secao: 0 5px 20px rgba(0, 0, 0, 0.35);
+    --sombra-card: 0 5px 12px rgba(0, 0, 0, 0.3);
+
+    --raio-pequeno: 8px;
+    --raio-medio: 10px;
+    --raio-grande: 20px;
+
+    --largura-conteudo: 1680px;
+}
+
+
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-branca);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+p {
+    line-height: 1.6;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+section {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   HEADER FIXO
+   ========================================================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   LOGO
+   O clamp faz a logo crescer de forma controlada conforme a tela.
+   ========================================================================== */
+
+.div-logo {
+    width: 100%;
+    min-height: 90px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-cinza-claro);
+}
+
+.div-logo a {
+    display: block;
+}
+
+.div-logo img {
+    width: clamp(120px, 10vw, 180px);
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--raio-medio);
+}
+
+
+/* ==========================================================================
+   BOTÃO DO MENU HAMBÚRGUER
+   Fica oculto no desktop e aparece somente em telas menores.
+   ========================================================================== */
+
+.menu-toggle {
+    display: none;
+    width: 100%;
+    border: 0;
+    padding: 12px 20px;
+    color: var(--cor-texto);
+    background-color: var(--cor-branca);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   MENU PRINCIPAL — DESKTOP
+   ========================================================================== */
+
+.menu {
+    width: 100%;
+    min-height: 50px;
+    margin: 0;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(12px, 1.6vw, 28px);
+    background-color: var(--cor-branca);
+    box-shadow: var(--sombra-menu);
+}
+
+.menu a,
+.menu span {
+    display: block;
+    padding: 5px 0;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(15px, 1.15vw, 18px);
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.menu > a:hover,
+.menu-item > span:hover {
+    opacity: 0.65;
+}
+
+
+/* ==========================================================================
+   SUBMENU — DESKTOP
+   ========================================================================== */
+
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1100;
+    min-width: 190px;
+    padding: 6px 0;
+    overflow: hidden;
+    background-color: var(--cor-branca);
+    border-radius: var(--raio-pequeno);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.submenu a {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.submenu a:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu {
+    display: block;
+}
+
+
+/* ==========================================================================
+   SLIDER
+   A classe correta no seu HTML é "slides".
+   "slider" também foi mantida para compatibilidade.
+   ========================================================================== */
+
+.slides,
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: clamp(380px, 40vw, 760px);
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide.active {
+    display: block;
+}
+
+.dots {
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #111111;
+}
+
+
+/* ==========================================================================
+   SEÇÕES GERAIS
+   ========================================================================== */
+
+.secao {
+    width: 100%;
+    padding: clamp(28px, 4vw, 70px) clamp(12px, 3vw, 40px);
+}
+
+.secao-cinza {
+    background-color: var(--cor-cinza-claro);
+}
+
+.secao-branca {
+    background-color: var(--cor-branca);
+}
+
+.secao-container {
+    width: min(100%, var(--largura-conteudo));
+    margin: 0 auto;
+    padding: clamp(20px, 2.5vw, 40px);
+    background-color: var(--cor-branca);
+    border-radius: var(--raio-medio);
+    box-shadow: var(--sombra-secao);
+}
+
+.secao-container h1,
+.secao-container h2 {
+    margin-top: 0;
+    font-family: "Rubik", sans-serif;
+    color: #222222;
+}
+
+.secao-container h1 {
+    font-size: clamp(26px, 2.3vw, 42px);
+}
+
+.secao-container h2 {
+    margin-bottom: clamp(16px, 2vw, 28px);
+    font-size: clamp(24px, 2vw, 36px);
+}
+
+.secao-container p {
+    margin-top: 0;
+    font-size: clamp(16px, 1.25vw, 20px);
+    font-weight: 500;
+    color: var(--cor-texto-secundario);
+}
+
+.secao-cinza h1,
+.secao-cinza h2,
+.secao-cinza p {
+    color: #111111;
+}
+
+.secao-container > a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    border-radius: var(--raio-pequeno);
+    transition: background-color 0.2s ease;
+}
+
+.secao-container > a:hover {
+    background-color: #eeeeee;
+}
+
+
+/* ==========================================================================
+   CONTAINER DE TEXTO E IMAGEM
+   ========================================================================== */
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(24px, 4vw, 70px);
+}
+
+.container > p {
+    flex: 1 1 60%;
+}
+
+.container-imagem {
+    flex: 0 1 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-imagem figure {
+    width: 100%;
+    text-align: center;
+}
+
+.container-imagem img {
+    width: min(100%, 420px);
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: var(--raio-medio);
+}
+
+/*
+   Corrige os estilos inline existentes na imagem e legenda
+   da seção Filhos de Issacar.
+*/
+.filhos-issacar .container-imagem img {
+    width: clamp(140px, 14vw, 210px) !important;
+    height: auto;
+    object-fit: cover;
+}
+
+.filhos-issacar figcaption {
+    margin-right: 0 !important;
+}
+
+
+/* ==========================================================================
+   REDES SOCIAIS
+   ========================================================================== */
+
+.container-redes {
+    width: 100%;
+    margin-top: clamp(20px, 3vw, 40px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(18px, 3vw, 50px);
+}
+
+.container-redes a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.container-redes a:hover {
+    transform: translateY(-4px);
+    opacity: 0.85;
+}
+
+.container-redes img {
+    width: clamp(110px, 10vw, 180px);
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: clamp(14px, 2vw, 25px);
+}
+
+
+/* ==========================================================================
+   AGENDA
+   O CSS Grid distribui os cards automaticamente conforme a tela.
+   ========================================================================== */
+
+.agenda {
+    width: min(100%, var(--largura-conteudo));
+    margin: 0 auto;
+    padding: clamp(18px, 2.5vw, 40px);
+    background-color: var(--cor-branca);
+    border-radius: var(--raio-medio);
+    box-shadow: var(--sombra-secao);
+}
+
+.agenda-h1 {
+    margin: 0 0 clamp(24px, 3vw, 45px);
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(26px, 2.4vw, 42px);
+}
+
+.agenda-ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: clamp(20px, 2.5vw, 35px);
+    list-style: none;
+}
+
+.agenda li {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--cor-branca);
+    border-radius: var(--raio-medio);
+    box-shadow: var(--sombra-card);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.agenda li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
+}
+
+.agenda li a {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.agenda figure {
+    width: 100%;
+}
+
+.agenda img {
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.agenda li div {
+    padding: clamp(14px, 1.5vw, 20px);
+}
+
+.agenda p {
+    margin: 0 0 6px;
+    color: #050505;
+    font-size: clamp(11px, 0.85vw, 13px);
+    font-weight: 600;
+}
+
+.agenda h3 {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(16px, 1.1vw, 19px);
+    line-height: 1.4;
+}
+
+
+/* ==========================================================================
+   TELAS GRANDES E ULTRAWIDE — 1920px OU MAIS
+   Inclui resoluções como 1920x1080 e 2560x1080.
+   ========================================================================== */
+
+@media (min-width: 1920px) {
+
+    :root {
+        --largura-conteudo: 1900px;
+    }
+
+    .div-logo {
+        min-height: 110px;
+    }
+
+    .div-logo img {
+        width: clamp(160px, 8vw, 210px);
+    }
+
+    .menu {
+        min-height: 58px;
+    }
+
+    .slide {
+        height: clamp(500px, 27vw, 690px);
+    }
+
+    .agenda-ul {
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   NOTEBOOKS E DESKTOPS MÉDIOS — ATÉ 1399px
+   Inclui a resolução original de 1366x768.
+   ========================================================================== */
+
+@media (max-width: 1399px) {
+
+    :root {
+        --largura-conteudo: 1240px;
+    }
+
+    .slide {
+        height: clamp(320px, 35vw, 500px);
+    }
+
+    .container-imagem {
+        flex-basis: 370px;
+    }
+
+    .container-imagem img {
+        width: min(100%, 360px);
+    }
+
+    .agenda-ul {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   TABLETS E TELAS INTERMEDIÁRIAS — ATÉ 1024px
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+    .menu {
+        gap: 14px;
+    }
+
+    .menu a,
+    .menu span {
+        font-size: 15px;
+    }
+
+    .container {
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .container-imagem {
+        flex-basis: 320px;
+    }
+
+    .container-redes img {
+        width: clamp(90px, 12vw, 130px);
+        height: auto;
+        max-height: 130px;
+    }
+}
+
+
+/* ==========================================================================
+   CELULARES E TABLETS PEQUENOS — ATÉ 768px
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* ----------------------------------------------------------------------
+       Header e logo
+       ---------------------------------------------------------------------- */
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    .div-logo {
+        min-height: 72px;
+        padding: 8px 16px;
+    }
+
+    .div-logo img {
+        width: clamp(110px, 34vw, 140px);
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Botão hambúrguer
+       ---------------------------------------------------------------------- */
+
+    .menu-toggle {
+        display: block;
+        box-shadow: var(--sombra-menu);
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Menu mobile
+       A classe "ativo" é acrescentada pelo JavaScript.
+       ---------------------------------------------------------------------- */
+
+    .menu {
+        display: none;
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background-color: var(--cor-branca);
+        box-shadow: var(--sombra-menu);
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
+
+    .menu > a,
+    .menu-item > span {
+        width: 100%;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--cor-borda);
+        font-size: 17px;
+        text-align: left;
+    }
+
+    .menu-item {
+        width: 100%;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Esconde itens menos importantes no celular
+       Foram incluídas variações com e sem barra inicial.
+       ---------------------------------------------------------------------- */
+
+    .menu a[href="/pages/historia-AD.html"],
+    .menu a[href="pages/historia-AD.html"],
+    .menu a[href="/pages/diretoria.html"],
+    .menu a[href="pages/diretoria.html"],
+    .menu a[href="/pages/doacoes.html"],
+    .menu a[href="pages/doacoes.html"] {
+        display: none;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Submenu mobile
+       Fica visível dentro do menu para não depender do efeito hover.
+       ---------------------------------------------------------------------- */
+
+    .submenu {
+        display: block;
+        position: static;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        background-color: var(--cor-cinza-menu);
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .submenu a {
+        width: 100%;
+        padding: 12px 18px 12px 38px;
+        border-bottom: 1px solid #e6e6e6;
+        font-size: 15px;
+        white-space: normal;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Slider removido no celular
+       ---------------------------------------------------------------------- */
+
+    .slides,
+    .slider {
+        display: none;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Seções mobile
+       ---------------------------------------------------------------------- */
+
+    .secao {
+        padding: 22px 10px;
+    }
+
+    .secao-container {
+        padding: 20px 16px;
+        border-radius: var(--raio-pequeno);
+    }
+
+    .secao-container h1 {
+        font-size: clamp(24px, 7vw, 30px);
+        text-align: center;
+    }
+
+    .secao-container h2 {
+        font-size: clamp(22px, 6.5vw, 28px);
+        text-align: center;
+    }
+
+    .secao-container p {
+        font-size: 16px;
+        text-align: left;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Texto e imagens mobile
+       ---------------------------------------------------------------------- */
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container > p {
+        width: 100%;
+    }
+
+    .container-imagem {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .container-imagem img {
+        width: min(100%, 300px);
+        height: auto;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Redes sociais mobile
+       ---------------------------------------------------------------------- */
+
+    .container-redes {
+        justify-content: center;
+        gap: 18px;
+    }
+
+     .container-redes img {
+        width: clamp(75px, 23vw, 100px);
+        height: auto;
+        max-height: 100px;
+        border-radius: 16px;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Agenda mobile
+       ---------------------------------------------------------------------- */
+
+    .agenda {
+        padding: 18px 12px;
+    }
+
+    .agenda-h1 {
+        margin-bottom: 22px;
+        font-size: clamp(25px, 7vw, 31px);
+    }
+
+    .agenda-ul {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .agenda li {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .agenda img {
+        aspect-ratio: 5 / 3;
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Esconde completamente a seção Filhos de Issacar no celular
+       Requer no HTML:
+       <section class="secao secao-branca filhos-issacar">
+       ---------------------------------------------------------------------- */
+
+    .filhos-issacar {
+        display: none;
+    }
+}
+
+
+/* ==========================================================================
+   CELULARES PEQUENOS — ATÉ 480px
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+    .div-logo {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        padding: 11px 16px;
+        font-size: 28px;
+    }
+
+    .menu > a,
+    .menu-item > span {
+        padding: 13px 16px;
+        font-size: 16px;
+    }
+
+    .submenu a {
+        padding: 11px 16px 11px 32px;
+        font-size: 14px;
+    }
+
+    .secao {
+        padding: 18px 8px;
+    }
+
+    .secao-container {
+        padding: 18px 14px;
+    }
+
+    .container-redes {
+        gap: 12px;
+    }
+
+     .container-redes img {
+        width: clamp(65px, 22vw, 82px);
+        height: auto;
+        max-height: 82px;
+    }
+
+    .agenda {
+        padding: 16px 10px;
+    }
+}
