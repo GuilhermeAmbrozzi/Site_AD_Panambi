@@ -3,11 +3,13 @@
 :root {
     --cor-branca: #ffffff;
     --cor-cinza-claro: #d8d7d7;
+    --cor-cinza-escuro: #b8b8b807;
     --cor-cinza-menu: #f7f7f7;
     --cor-texto: #1f1f1f;
     --cor-borda: #dddddd;
     --sombra-menu: 0 4px 8px rgba(0, 0, 0, 0.28);
     --largura-global: 1680px;
+    
 }
 
 *,
@@ -96,7 +98,7 @@ header {
     box-shadow: var(--sombra-menu);
 }
 
-.menu > a,
+.menu>a,
 .submenu-toggle {
     display: block;
     padding: 5px 0;
@@ -110,8 +112,8 @@ header {
     cursor: pointer;
 }
 
-.menu > a:hover,
-.menu > a:focus-visible,
+.menu>a:hover,
+.menu>a:focus-visible,
 .submenu-toggle:hover,
 .submenu-toggle:focus-visible {
     opacity: 0.65;
@@ -210,7 +212,7 @@ footer {
         min-height: 62px;
     }
 
-    .menu > a,
+    .menu>a,
     .submenu-toggle {
         font-size: 19px;
     }
@@ -221,7 +223,7 @@ footer {
         gap: 14px;
     }
 
-    .menu > a,
+    .menu>a,
     .submenu-toggle {
         font-size: 15px;
     }
@@ -255,7 +257,7 @@ footer {
         display: flex;
     }
 
-    .menu > a,
+    .menu>a,
     .submenu-toggle {
         width: 100%;
         padding: 14px 18px;
@@ -301,7 +303,7 @@ footer {
         font-size: 28px;
     }
 
-    .menu > a,
+    .menu>a,
     .submenu-toggle {
         padding: 13px 16px;
         font-size: 16px;
@@ -310,5 +312,129 @@ footer {
     .submenu a {
         padding: 11px 16px 11px 32px;
         font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+   CABEÇALHO INTERNO DAS SEÇÕES
+   ========================================================================== */
+
+.secao-cabecalho {
+    max-width: 850px;
+    margin: 0 auto clamp(30px, 4vw, 55px);
+    text-align: center;
+}
+
+.secao-subtitulo {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: var(--cor-texto);
+
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(13px, 1vw, 16px);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.secao-cabecalho h2 {
+    margin: 0 0 14px;
+
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(28px, 3vw, 46px);
+    line-height: 1.2;
+}
+
+.secao-cabecalho p {
+    margin: 0;
+
+    font-size: clamp(16px, 1.2vw, 19px);
+    line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   BOTÃO PRINCIPAL
+   ========================================================================== */
+
+.botao-principal {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 48px;
+    padding: 13px 26px;
+
+    color: #fff;
+    background: #3d3d3d;
+
+    border: 2px solid #3d3d3d;
+    border-radius: 8px;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.botao-principal:hover,
+.botao-principal:focus-visible {
+
+    background: #2b2b2b;
+    border-color: #2b2b2b;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   LINK COM SETA
+   ========================================================================== */
+
+.botao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #222;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.botao-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   ACESSIBILIDADE
+   ========================================================================== */
+
+.botao-principal:focus-visible,
+.botao-link:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.589);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================================
+   CELULARES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .secao-cabecalho {
+        margin-bottom: 30px;
+    }
+
+    .botao-principal {
+        width: 100%;
+        max-width: 340px;
     }
 }
