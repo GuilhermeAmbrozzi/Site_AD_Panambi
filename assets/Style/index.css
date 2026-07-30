@@ -831,8 +831,6 @@ header {
 
     /* ----------------------------------------------------------------------
        Esconde completamente a seção Filhos de Issacar no celular
-       Requer no HTML:
-       <section class="secao secao-branca filhos-issacar">
        ---------------------------------------------------------------------- */
 
     .filhos-issacar {
@@ -898,7 +896,7 @@ header {
 }
 
 .noticias-container {
-    width: min(100%, 1500px);
+    width: min(100%, var(--largura-conteudo));
     margin: 0 auto;
 }
 
@@ -928,7 +926,7 @@ header {
 
     border-radius: 12px;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,.12);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.432);
 
     transition:
         transform .25s ease,
@@ -938,7 +936,7 @@ header {
 .noticia-card:hover{
     transform: translateY(-7px);
 
-    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.432);
 }
 
 
@@ -970,7 +968,7 @@ header {
 
 .noticia-card:hover .noticia-imagem img{
 
-    transform:scale(1.05);
+    transform:scale(1.00);
 
 }
 

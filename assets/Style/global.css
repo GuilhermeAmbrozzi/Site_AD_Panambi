@@ -438,3 +438,601 @@ footer {
         max-width: 340px;
     }
 }
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+
+    background: #202020;
+    color: #ffffff;
+
+    margin-top: 5rem;
+}
+
+.footer-container {
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 3rem 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.footer-info {
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+.footer-texto h3 {
+
+    margin-bottom: .5rem;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.footer-texto p {
+
+    margin: .25rem 0;
+
+    color: #d2d2d2;
+
+    line-height: 1.6;
+}
+
+.footer-redes {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-redes a {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #333333;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.footer-redes a:hover,
+.footer-redes a:focus-visible {
+
+    background: var(--verde);
+
+    transform: translateY(-3px);
+}
+
+.footer-creditos {
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    padding: 1.25rem;
+
+    text-align: center;
+
+    font-size: .95rem;
+
+    color: #cfcfcf;
+}
+
+.footer-creditos strong {
+
+    color: #ffffff;
+}
+
+.footer-creditos a {
+
+    color: var(--verde);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.footer-creditos a:hover,
+.footer-creditos a:focus-visible {
+
+    text-decoration: underline;
+}
+
+.footer-endereco{
+
+    margin-top:1rem;
+}
+
+.footer-endereco a{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.75rem;
+
+    text-decoration:none;
+
+    color:#d2d2d2;
+
+    transition:color .25s ease;
+}
+
+.footer-endereco a:hover,
+.footer-endereco a:focus-visible{
+
+    color:var(--verde);
+}
+
+.footer-endereco img{
+
+    width:42px;
+
+    height:42px;
+
+    margin-top:.15rem;
+
+    flex-shrink:0;
+
+    object-fit:contain;
+}
+
+.footer-endereco span{
+
+    line-height:1.6;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .footer-container {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-info {
+
+        flex-direction: column;
+    }
+
+    .footer-texto {
+
+        text-align: center;
+    }
+
+    .footer-redes {
+
+        justify-content: center;
+    }
+
+    .footer-logo img {
+
+        width: 80px;
+        height: 80px;
+    }
+
+       .footer-endereco a{
+
+        justify-content:center;
+
+        text-align:left;
+    }
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+
+    background: #202020;
+    color: #ffffff;
+
+    margin-top: 5rem;
+}
+
+.footer-container {
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 3rem 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.footer-info {
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+.footer-texto h3 {
+
+    margin-bottom: .5rem;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.footer-texto p {
+
+    margin: .25rem 0;
+
+    color: #d2d2d2;
+
+    line-height: 1.6;
+}
+
+.footer-redes {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-redes img {
+
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-redes a {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #333333;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.footer-redes a:hover,
+.footer-redes a:focus-visible {
+
+    background: var(--cor-branca);
+
+    transform: translateY(-3px);
+}
+
+.footer-creditos {
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    padding: 1.25rem;
+
+    text-align: center;
+
+    font-size: .95rem;
+
+    color: #cfcfcf;
+}
+
+.footer-creditos strong {
+
+    color: #ffffff;
+}
+
+.footer-creditos a {
+
+    color: var(--verde);
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.footer-creditos a:hover,
+.footer-creditos a:focus-visible {
+
+    text-decoration: underline;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .footer-container {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-info {
+
+        flex-direction: column;
+    }
+
+    .footer-texto {
+
+        text-align: center;
+    }
+
+    .footer-redes {
+
+        justify-content: center;
+    }
+
+    .footer-logo img {
+
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+/* ===========================
+   MODAL DE AVISO
+=========================== */
+
+.aviso-modal {
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.aviso-modal.ativo {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.aviso-modal-conteudo {
+
+    width: min(100%, 520px);
+
+    padding: 2rem;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(-20px) scale(0.97);
+
+    transition: transform 0.25s ease;
+}
+
+.aviso-modal.ativo .aviso-modal-conteudo {
+
+    transform: translateY(0) scale(1);
+}
+
+.aviso-modal-icone {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #c62828;
+    color: #ffffff;
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.aviso-modal h2 {
+
+    margin-bottom: 1rem;
+
+    color: #c62828;
+
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.aviso-modal-texto {
+
+    color: #333333;
+
+    line-height: 1.6;
+}
+
+.aviso-modal-texto p {
+
+    margin-bottom: 1rem;
+}
+
+.aviso-modal-texto p:last-child {
+
+    margin-bottom: 0;
+}
+
+.aviso-modal-botao {
+
+    margin-top: 1.5rem;
+
+    padding: 0.85rem 2rem;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: #c62828;
+    color: #ffffff;
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.aviso-modal-botao:hover,
+.aviso-modal-botao:focus-visible {
+
+    background: #9f1f1f;
+
+    transform: translateY(-2px);
+}
+
+.aviso-modal-botao:focus-visible {
+
+    outline: 3px solid rgba(198, 40, 40, 0.35);
+    outline-offset: 3px;
+}
+
+/* Impede a página de rolar enquanto o modal está aberto */
+
+body.modal-aberto {
+
+    overflow: hidden;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 480px) {
+
+    .aviso-modal {
+
+        padding: 1rem;
+    }
+
+    .aviso-modal-conteudo {
+
+        padding: 1.5rem;
+    }
+
+    .aviso-modal-icone {
+
+        width: 52px;
+        height: 52px;
+
+        font-size: 1.7rem;
+    }
+
+    .aviso-modal h2 {
+
+        font-size: 1.5rem;
+    }
+
+    .aviso-modal-texto {
+
+        font-size: 0.95rem;
+    }
+
+    .aviso-modal-botao {
+
+        width: 100%;
+    }
+
+}
