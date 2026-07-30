@@ -287,40 +287,54 @@ blockquote cite {
     overflow-x: auto;
     border-radius: 12px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.14);
+    -webkit-overflow-scrolling: touch;
 }
 
-table {
+.tabela-responsiva table {
     width: 100%;
-    min-width: 520px;
+    min-width: 700px;
     border-collapse: collapse;
     background: var(--pfi-branco);
 }
 
-caption {
+.tabela-responsiva caption {
     padding: 14px 16px;
     color: var(--pfi-branco);
     background: var(--pfi-verde-escuro);
     font-family: "Rubik", sans-serif;
     font-weight: 700;
     text-align: left;
+    white-space: normal;
 }
 
-th,
-td {
+.tabela-responsiva th,
+.tabela-responsiva td {
     padding: 14px 18px;
     border: 1px solid #cfd8dc;
     text-align: left;
     vertical-align: top;
 }
 
-th {
+.tabela-responsiva th {
     color: #102a43;
     background: var(--pfi-azul-claro);
     font-family: "Rubik", sans-serif;
 }
 
-tbody tr:nth-child(even) {
+.tabela-responsiva tbody tr:nth-child(even) {
     background: #f7fafc;
+}
+
+.tabela-responsiva th:first-child,
+.tabela-responsiva td:first-child {
+    width: 100px;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+.tabela-responsiva th:last-child,
+.tabela-responsiva td:last-child {
+    min-width: 480px;
 }
 
 .cronograma-imagem {
@@ -459,33 +473,43 @@ tbody tr:nth-child(even) {
     }
 }
 
-@media (max-width: 480px) {
-    .projeto-marcas {
-        grid-template-columns: 60px 1fr 60px;
-        padding-inline: 8px;
+@media (max-width: 576px) {
+    .tabela-responsiva {
+        width: 100%;
+        overflow-x: visible;
     }
 
-    .marca-ad img {
-        width: 48px;
-        height: 48px;
+    .tabela-responsiva table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
     }
 
-    .marca-projeto img {
-        width: min(205px, 62vw);
-        max-height: 62px;
-    }
-
-    .secao-container h1,
-    .secao-container h2 {
+    .tabela-responsiva th,
+    .tabela-responsiva td {
+        padding: 12px 10px;
+        white-space: normal;
         overflow-wrap: anywhere;
+        word-break: normal;
     }
 
-    blockquote {
-        padding: 18px;
+    .tabela-responsiva th:first-child,
+    .tabela-responsiva td:first-child {
+        width: 85px;
+        min-width: 0;
+        white-space: nowrap;
     }
 
-    th,
-    td {
-        padding: 12px 14px;
+    .tabela-responsiva th:last-child,
+    .tabela-responsiva td:last-child {
+        width: auto;
+        min-width: 0;
+        white-space: normal;
+    }
+
+    .tabela-responsiva caption {
+        width: auto;
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
 }
