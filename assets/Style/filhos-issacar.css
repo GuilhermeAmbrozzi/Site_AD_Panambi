@@ -1,3 +1,6 @@
+/*
+root é uma coixa dentro do css que vc coloca variaveis e da valores á elas, assim quando vc querer mudar algo no site muda o valor da variavel dentro dessa caixa.
+*/
 :root {
     --pfi-verde: #245f2a;
     --pfi-verde-escuro: #17441d;
@@ -27,6 +30,7 @@
     margin: 0 auto;
     padding: 14px 24px;
     display: grid;
+    /*controla o espaço das colunas, onde cada coluna tem seu valor minimo e caso sobre espaço essa coluna aumenta conforma a fração de espaço disponivel nesse caso FR*/
     grid-template-columns: minmax(180px, 1fr) minmax(280px, 2fr) minmax(180px, 1fr);
     align-items: center;
 }
@@ -41,6 +45,7 @@
     font-family: "Rubik", sans-serif;
     font-size: 13px;
     font-weight: 600;
+    /*Espaço entre as linas esse valor de 1.25 se multiplica com o valor do font-size se adaptando automaticamente*/
     line-height: 1.25;
 }
 
@@ -63,6 +68,7 @@
 }
 
 .marca-projeto img {
+    /*Clamp trabalho com valor minimo, ideal, maximo */
     width: clamp(230px, 25vw, 420px);
     max-height: 100px;
     object-fit: contain;
@@ -77,7 +83,7 @@
 .projeto-menu > a {
     font-size: clamp(14px, 1vw, 17px);
 }
-
+/*o sinal de > indica que é para pegar somente a tag filha dessa classe e aplicar os atributos no caso houver é quando o mouse estiver sobre a tag ele aplica a cor desejada e a opacidade. */
 .projeto-menu > a:hover,
 .projeto-menu > a:focus-visible {
     color: var(--pfi-verde);
