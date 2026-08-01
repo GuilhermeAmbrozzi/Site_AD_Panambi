@@ -19,13 +19,19 @@
                 <img src="./assets/Img/Pagina-Inicial/Logo-Pagina-Inicial2.jpg" alt="logo Assembleia de Deus">
             </a>
         </div>
-        <button class="menu-toggle">&#9776;</button>
-        <div class="menu">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu">
+            &#9776;
+        </button>
+
+        <nav class="menu">
 
             <a href="./pages/historia-AD.html">Nossa História</a>
 
             <div class="menu-item">
-                <span>Departamentos</span>
+                <button class="submenu-toggle" type="button" aria-expanded="false">
+                    Departamentos
+                </button>
+
                 <div class="submenu">
                     <a href="./pages/Departamentos/Filhos-Issacar.html">Filhos de Issacar</a>
                     <a href="#">Jovens</a>
@@ -35,19 +41,22 @@
             </div>
 
             <div class="menu-item">
-                <span>Templos</span>
+                <button class="submenu-toggle" type="button" aria-expanded="false">
+                    Templos
+                </button>
+
                 <div class="submenu">
                     <a href="#">Templo Centro</a>
                     <a href="#">Templo Bairro</a>
                 </div>
             </div>
+
             <a href="#">Notícias</a>
             <a href="#">Diretoria</a>
             <a href="#">Doações</a>
             <a href="#">Contato</a>
 
-
-        </div>
+        </nav>
     </header>
     <main>
         <div class="slides">
@@ -339,7 +348,8 @@
 
                 <a href="./index.html" class="footer-logo">
 
-                    <img src="./assets/Img/Pagina-Inicial/Logo-Pagina-Inicial.jpg" alt="Logo Assembleia de Deus Panambi">
+                    <img src="./assets/Img/Pagina-Inicial/Logo-Pagina-Inicial.jpg"
+                        alt="Logo Assembleia de Deus Panambi">
 
                 </a>
 

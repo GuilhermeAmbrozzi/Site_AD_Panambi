@@ -121,103 +121,6 @@ header {
     border-radius: var(--raio-medio);
 }
 
-
-/* ==========================================================================
-   BOTÃO DO MENU HAMBÚRGUER
-   Fica oculto no desktop e aparece somente em telas menores.
-   ========================================================================== */
-
-.menu-toggle {
-    display: none;
-    width: 100%;
-    border: 0;
-    padding: 12px 20px;
-    color: var(--cor-texto);
-    background-color: var(--cor-branca);
-    font-size: 30px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-
-/* ==========================================================================
-   MENU PRINCIPAL — DESKTOP
-   ========================================================================== */
-
-.menu {
-    width: 100%;
-    min-height: 50px;
-    margin: 0;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: clamp(12px, 1.6vw, 28px);
-    background-color: var(--cor-branca);
-    box-shadow: var(--sombra-menu);
-}
-
-.menu a,
-.menu span {
-    display: block;
-    padding: 5px 0;
-    color: var(--cor-texto);
-    text-decoration: none;
-    font-family: "Rubik", sans-serif;
-    font-size: clamp(15px, 1.15vw, 18px);
-    font-weight: 500;
-    cursor: pointer;
-    transition:
-        color 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.menu>a:hover,
-.menu-item>span:hover {
-    opacity: 0.65;
-}
-
-
-/* ==========================================================================
-   SUBMENU — DESKTOP
-   ========================================================================== */
-
-.menu-item {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1100;
-    min-width: 190px;
-    padding: 6px 0;
-    overflow: hidden;
-    background-color: var(--cor-branca);
-    border-radius: var(--raio-pequeno);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-}
-
-.submenu a {
-    width: 100%;
-    padding: 10px 14px;
-    font-size: 16px;
-    white-space: nowrap;
-}
-
-.submenu a:hover {
-    background-color: #f0f0f0;
-}
-
-.menu-item:hover .submenu,
-.menu-item:focus-within .submenu {
-    display: block;
-}
-
-
 /* ==========================================================================
    SLIDER
    A classe correta no seu HTML é "slides".
@@ -527,18 +430,6 @@ header {
         --largura-conteudo: 1900px;
     }
 
-    .div-logo {
-        min-height: 110px;
-    }
-
-    .div-logo img {
-        width: clamp(160px, 8vw, 210px);
-    }
-
-    .menu {
-        min-height: 58px;
-    }
-
     .slide {
         height: clamp(500px, 27vw, 690px);
     }
@@ -584,15 +475,6 @@ header {
 
 @media (max-width: 1024px) {
 
-    .menu {
-        gap: 14px;
-    }
-
-    .menu a,
-    .menu span {
-        font-size: 15px;
-    }
-
     .container {
         align-items: flex-start;
         gap: 30px;
@@ -616,226 +498,121 @@ header {
 
 @media (max-width: 768px) {
 
-    /* ----------------------------------------------------------------------
-       Header e logo
-       ---------------------------------------------------------------------- */
+    @media (max-width: 768px) {
 
-    header {
-        position: sticky;
-        top: 0;
+        /* Esconde itens menos importantes do menu somente na página inicial */
+
+        .menu a[href="/pages/historia-AD.html"],
+        .menu a[href="pages/historia-AD.html"],
+        .menu a[href="/pages/diretoria.html"],
+        .menu a[href="pages/diretoria.html"],
+        .menu a[href="/pages/doacoes.html"],
+        .menu a[href="pages/doacoes.html"] {
+            display: none;
+        }
+
+        /* Slider */
+
+        .slides,
+        .slider {
+            display: none;
+        }
+
+        /* Seções */
+
+        .secao {
+            padding: 22px 10px;
+        }
+
+        .secao-container {
+            padding: 20px 16px;
+            border-radius: var(--raio-pequeno);
+        }
+
+        .secao-container h1 {
+            font-size: clamp(24px, 7vw, 30px);
+            text-align: center;
+        }
+
+        .secao-container h2 {
+            font-size: clamp(22px, 6.5vw, 28px);
+            text-align: center;
+        }
+
+        .secao-container p {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        /* Conteúdo */
+
+        .container {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .container>p {
+            width: 100%;
+        }
+
+        .container-imagem {
+            width: 100%;
+            flex-basis: auto;
+        }
+
+        .container-imagem img {
+            width: min(100%, 300px);
+            height: auto;
+        }
+
+        /* Redes sociais */
+
+        .container-redes {
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .container-redes img {
+            width: clamp(75px, 23vw, 100px);
+            height: auto;
+            max-height: 100px;
+            border-radius: 16px;
+        }
+
+        /* Agenda */
+
+        .agenda {
+            padding: 18px 12px;
+        }
+
+        .agenda-h1 {
+            margin-bottom: 22px;
+            font-size: clamp(25px, 7vw, 31px);
+        }
+
+        .agenda-ul {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .agenda li {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .agenda img {
+            aspect-ratio: 5 / 3;
+        }
+
+        /* Seção exclusiva da página inicial */
+
+        .filhos-issacar {
+            display: none;
+        }
     }
 
-    .div-logo {
-        min-height: 72px;
-        padding: 8px 16px;
-    }
-
-    .div-logo img {
-        width: clamp(110px, 34vw, 140px);
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Botão hambúrguer
-       ---------------------------------------------------------------------- */
-
-    .menu-toggle {
-        display: block;
-        box-shadow: var(--sombra-menu);
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Menu mobile
-       A classe "ativo" é acrescentada pelo JavaScript.
-       ---------------------------------------------------------------------- */
-
-    .menu {
-        display: none;
-        width: 100%;
-        padding: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background-color: var(--cor-branca);
-        box-shadow: var(--sombra-menu);
-    }
-
-    .menu.ativo {
-        display: flex;
-    }
-
-    .menu>a,
-    .menu-item>span {
-        width: 100%;
-        padding: 14px 18px;
-        border-bottom: 1px solid var(--cor-borda);
-        font-size: 17px;
-        text-align: left;
-    }
-
-    .menu-item {
-        width: 100%;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Esconde itens menos importantes no celular
-       Foram incluídas variações com e sem barra inicial.
-       ---------------------------------------------------------------------- */
-
-    .menu a[href="/pages/historia-AD.html"],
-    .menu a[href="pages/historia-AD.html"],
-    .menu a[href="/pages/diretoria.html"],
-    .menu a[href="pages/diretoria.html"],
-    .menu a[href="/pages/doacoes.html"],
-    .menu a[href="pages/doacoes.html"] {
-        display: none;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Submenu mobile
-       Fica visível dentro do menu para não depender do efeito hover.
-       ---------------------------------------------------------------------- */
-
-    .submenu {
-        display: block;
-        position: static;
-        width: 100%;
-        min-width: 0;
-        padding: 0;
-        background-color: var(--cor-cinza-menu);
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .submenu a {
-        width: 100%;
-        padding: 12px 18px 12px 38px;
-        border-bottom: 1px solid #e6e6e6;
-        font-size: 15px;
-        white-space: normal;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Slider removido no celular
-       ---------------------------------------------------------------------- */
-
-    .slides,
-    .slider {
-        display: none;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Seções mobile
-       ---------------------------------------------------------------------- */
-
-    .secao {
-        padding: 22px 10px;
-    }
-
-    .secao-container {
-        padding: 20px 16px;
-        border-radius: var(--raio-pequeno);
-    }
-
-    .secao-container h1 {
-        font-size: clamp(24px, 7vw, 30px);
-        text-align: center;
-    }
-
-    .secao-container h2 {
-        font-size: clamp(22px, 6.5vw, 28px);
-        text-align: center;
-    }
-
-    .secao-container p {
-        font-size: 16px;
-        text-align: left;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Texto e imagens mobile
-       ---------------------------------------------------------------------- */
-
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .container>p {
-        width: 100%;
-    }
-
-    .container-imagem {
-        width: 100%;
-        flex-basis: auto;
-    }
-
-    .container-imagem img {
-        width: min(100%, 300px);
-        height: auto;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Redes sociais mobile
-       ---------------------------------------------------------------------- */
-
-    .container-redes {
-        justify-content: center;
-        gap: 18px;
-    }
-
-    .container-redes img {
-        width: clamp(75px, 23vw, 100px);
-        height: auto;
-        max-height: 100px;
-        border-radius: 16px;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Agenda mobile
-       ---------------------------------------------------------------------- */
-
-    .agenda {
-        padding: 18px 12px;
-    }
-
-    .agenda-h1 {
-        margin-bottom: 22px;
-        font-size: clamp(25px, 7vw, 31px);
-    }
-
-    .agenda-ul {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .agenda li {
-        width: 100%;
-        max-width: 420px;
-        margin: 0 auto;
-    }
-
-    .agenda img {
-        aspect-ratio: 5 / 3;
-    }
-
-
-    /* ----------------------------------------------------------------------
-       Esconde completamente a seção Filhos de Issacar no celular
-       ---------------------------------------------------------------------- */
-
-    .filhos-issacar {
-        display: none;
-    }
 }
 
 
@@ -844,27 +621,6 @@ header {
    ========================================================================== */
 
 @media (max-width: 480px) {
-
-    .div-logo {
-        min-height: 68px;
-    }
-
-    .menu-toggle {
-        padding: 11px 16px;
-        font-size: 28px;
-    }
-
-    .menu>a,
-    .menu-item>span {
-        padding: 13px 16px;
-        font-size: 16px;
-    }
-
-    .submenu a {
-        padding: 11px 16px 11px 32px;
-        font-size: 14px;
-    }
-
     .secao {
         padding: 18px 8px;
     }
@@ -887,6 +643,7 @@ header {
         padding: 16px 10px;
     }
 }
+
 /* ==========================================================================
    SEÇÃO DE NOTÍCIAS
    ========================================================================== */
@@ -933,7 +690,7 @@ header {
         box-shadow .25s ease;
 }
 
-.noticia-card:hover{
+.noticia-card:hover {
     transform: translateY(-7px);
 
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.432);
@@ -944,31 +701,31 @@ header {
    IMAGEM
    ========================================================================== */
 
-.noticia-imagem{
-    display:block;
+.noticia-imagem {
+    display: block;
 
-    overflow:hidden;
+    overflow: hidden;
 
-    aspect-ratio:16/9;
+    aspect-ratio: 16/9;
 
-    background:#ddd;
+    background: #ddd;
 }
 
-.noticia-imagem img{
+.noticia-imagem img {
 
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 
-    display:block;
+    display: block;
 
-    object-fit:cover;
+    object-fit: cover;
 
-    transition:transform .35s;
+    transition: transform .35s;
 }
 
-.noticia-card:hover .noticia-imagem img{
+.noticia-card:hover .noticia-imagem img {
 
-    transform:scale(1.00);
+    transform: scale(1.00);
 
 }
 
@@ -977,14 +734,14 @@ header {
    CONTEÚDO
    ========================================================================== */
 
-.noticia-conteudo{
+.noticia-conteudo {
 
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 
-    flex:1;
+    flex: 1;
 
-    padding:24px;
+    padding: 24px;
 }
 
 
@@ -992,47 +749,47 @@ header {
    DATA / CATEGORIA
    ========================================================================== */
 
-.noticia-informacoes{
+.noticia-informacoes {
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
-    align-items:center;
+    align-items: center;
 
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
-    gap:10px;
+    gap: 10px;
 
-    margin-bottom:15px;
-
-}
-
-.noticia-categoria{
-
-    padding:5px 12px;
-
-    background:#4b4b4b;
-
-    color:#fff;
-
-    border-radius:20px;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    text-transform:uppercase;
+    margin-bottom: 15px;
 
 }
 
-.noticia-informacoes time{
+.noticia-categoria {
 
-    color:#666;
+    padding: 5px 12px;
 
-    font-size:14px;
+    background: #4b4b4b;
+
+    color: #fff;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+
+}
+
+.noticia-informacoes time {
+
+    color: #666;
+
+    font-size: 14px;
 
 }
 
@@ -1041,29 +798,29 @@ header {
    TÍTULO
    ========================================================================== */
 
-.noticia-conteudo h3{
+.noticia-conteudo h3 {
 
-    margin-bottom:15px;
+    margin-bottom: 15px;
 
-    font-size:24px;
+    font-size: 24px;
 
-    line-height:1.35;
-
-}
-
-.noticia-conteudo h3 a{
-
-    color:#111;
-
-    text-decoration:none;
-
-    transition:.2s;
+    line-height: 1.35;
 
 }
 
-.noticia-conteudo h3 a:hover{
+.noticia-conteudo h3 a {
 
-    color:#333;
+    color: #111;
+
+    text-decoration: none;
+
+    transition: .2s;
+
+}
+
+.noticia-conteudo h3 a:hover {
+
+    color: #333;
 
 }
 
@@ -1072,17 +829,17 @@ header {
    TEXTO
    ========================================================================== */
 
-.noticia-conteudo p{
+.noticia-conteudo p {
 
-    flex:1;
+    flex: 1;
 
-    margin-bottom:22px;
+    margin-bottom: 22px;
 
-    line-height:1.7;
+    line-height: 1.7;
 
-    color:#4b4b4b;
+    color: #4b4b4b;
 
-    font-size:17px;
+    font-size: 17px;
 
 }
 
@@ -1091,31 +848,31 @@ header {
    LINK
    ========================================================================== */
 
-.noticia-link{
+.noticia-link {
 
-    display:inline-flex;
+    display: inline-flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:8px;
+    gap: 8px;
 
-    color:#222;
+    color: #222;
 
-    font-weight:700;
+    font-weight: 700;
 
-    text-decoration:none;
+    text-decoration: none;
 
-    transition:.2s;
+    transition: .2s;
 
 }
 
-.noticia-link:hover{
+.noticia-link:hover {
 
-    color:#000;
+    color: #000;
 
-    gap:12px;
+    gap: 12px;
 
-    text-decoration:underline;
+    text-decoration: underline;
 
 }
 
@@ -1124,13 +881,13 @@ header {
    RODAPÉ
    ========================================================================== */
 
-.noticias-rodape{
+.noticias-rodape {
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    margin-top:45px;
+    margin-top: 45px;
 
 }
 
@@ -1139,11 +896,11 @@ header {
    NOTEBOOK
    ========================================================================== */
 
-@media (max-width:1100px){
+@media (max-width:1100px) {
 
-    .noticias-grid{
+    .noticias-grid {
 
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
 
     }
 
@@ -1154,19 +911,19 @@ header {
    TABLET
    ========================================================================== */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    .noticias-grid{
+    .noticias-grid {
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:25px;
+        gap: 25px;
 
     }
 
-    .noticia-conteudo{
+    .noticia-conteudo {
 
-        padding:20px;
+        padding: 20px;
 
     }
 
@@ -1177,19 +934,19 @@ header {
    CELULAR
    ========================================================================== */
 
-@media (max-width:480px){
+@media (max-width:480px) {
 
-    .noticia-informacoes{
+    .noticia-informacoes {
 
-        flex-direction:column;
+        flex-direction: column;
 
-        align-items:flex-start;
+        align-items: flex-start;
 
     }
 
-    .noticia-conteudo h3{
+    .noticia-conteudo h3 {
 
-        font-size:21px;
+        font-size: 21px;
 
     }
 

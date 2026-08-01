@@ -9,7 +9,7 @@
     --cor-borda: #dddddd;
     --sombra-menu: 0 4px 8px rgba(0, 0, 0, 0.28);
     --largura-global: 1680px;
-    
+
 }
 
 *,
@@ -73,6 +73,11 @@ header {
     border-radius: 10px;
 }
 
+/* ==========================================================================
+   BOTÃO DO MENU HAMBÚRGUER
+   Fica oculto no desktop e aparece somente em telas menores.
+   ========================================================================== */
+
 .menu-toggle {
     display: none;
     width: 100%;
@@ -85,7 +90,13 @@ header {
     cursor: pointer;
 }
 
+/* ==========================================================================
+   MENU PRINCIPAL — DESKTOP
+   ========================================================================== */
+
+
 .menu {
+    width: 100%;
     min-height: 50px;
     margin: 0;
     padding: 12px 20px;
@@ -94,7 +105,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: clamp(12px, 1.6vw, 28px);
-    background: var(--cor-branca);
+    background-color: var(--cor-branca);
     box-shadow: var(--sombra-menu);
 }
 
@@ -126,6 +137,10 @@ header {
 .menu-item {
     position: relative;
 }
+
+/* ==========================================================================
+   SUBMENU — DESKTOP
+   ========================================================================== */
 
 .submenu {
     display: none;
@@ -162,39 +177,6 @@ header {
     display: block;
 }
 
-/* Estrutura preparada para um rodapé compartilhado nas próximas páginas. */
-.site-footer,
-footer {
-    width: 100%;
-    margin-top: auto;
-    padding: 28px 20px;
-    color: #ffffff;
-    background: #252525;
-}
-
-.footer-container {
-    width: min(100%, var(--largura-global));
-    margin: 0 auto;
-}
-
-@media (min-width: 1920px) {
-    :root {
-        --largura-global: 1800px;
-    }
-
-    .div-logo {
-        min-height: 105px;
-    }
-
-    .div-logo img {
-        width: clamp(160px, 8vw, 200px);
-    }
-
-    .menu {
-        min-height: 58px;
-    }
-}
-
 @media (min-width: 2560px) {
     :root {
         --largura-global: 2100px;
@@ -213,10 +195,35 @@ footer {
     }
 
     .menu>a,
-    .submenu-toggle {
+    .menu-item>.submenu-toggle {
         font-size: 19px;
     }
 }
+
+/* ==========================================================================
+   TELAS GRANDES E ULTRAWIDE — 1920px OU MAIS
+   Inclui resoluções como 1920x1080 e 2560x1080.
+   ========================================================================== */
+
+
+@media (min-width: 1920px) {
+    .div-logo {
+        min-height: 105px;
+    }
+
+    .div-logo img {
+        width: clamp(160px, 8vw, 200px);
+    }
+
+    .menu {
+        min-height: 58px;
+    }
+}
+
+/* ==========================================================================
+   TABLETS E TELAS INTERMEDIÁRIAS — ATÉ 1024px
+   ========================================================================== */
+
 
 @media (max-width: 1024px) {
     .menu {
@@ -224,10 +231,15 @@ footer {
     }
 
     .menu>a,
-    .submenu-toggle {
+    .menu-item>.submenu-toggle {
         font-size: 15px;
     }
 }
+
+/* ==========================================================================
+   CELULARES E TABLETS PEQUENOS — ATÉ 768px
+   ========================================================================== */
+
 
 @media (max-width: 768px) {
     .div-logo {
@@ -251,6 +263,8 @@ footer {
         flex-direction: column;
         align-items: stretch;
         gap: 0;
+        background: var(--cor-branca);
+        box-shadow: var(--sombra-menu);
     }
 
     .menu.ativo {
@@ -258,7 +272,7 @@ footer {
     }
 
     .menu>a,
-    .submenu-toggle {
+    .menu-item>.submenu-toggle {
         width: 100%;
         padding: 14px 18px;
         border-bottom: 1px solid var(--cor-borda);
@@ -286,12 +300,18 @@ footer {
     }
 
     .submenu a {
+        width: 100%;
         padding: 12px 18px 12px 38px;
         border-bottom: 1px solid #e6e6e6;
         font-size: 15px;
         white-space: normal;
     }
 }
+
+/* ==========================================================================
+   CELULARES PEQUENOS — ATÉ 480px
+   ========================================================================== */
+
 
 @media (max-width: 480px) {
     .div-logo {
@@ -304,7 +324,7 @@ footer {
     }
 
     .menu>a,
-    .submenu-toggle {
+    .menu-item>.submenu-toggle {
         padding: 13px 16px;
         font-size: 16px;
     }
@@ -439,231 +459,6 @@ footer {
     }
 }
 
-/* ===========================
-   FOOTER
-=========================== */
-
-.footer {
-
-    background: #202020;
-    color: #ffffff;
-
-    margin-top: 5rem;
-}
-
-.footer-container {
-
-    max-width: 1200px;
-    margin: 0 auto;
-
-    padding: 3rem 1.5rem;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-
-    flex-wrap: wrap;
-}
-
-.footer-info {
-
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.footer-logo {
-
-    display: flex;
-    align-items: center;
-}
-
-.footer-logo img {
-
-    width: 90px;
-    height: 90px;
-
-    object-fit: contain;
-}
-
-.footer-texto h3 {
-
-    margin-bottom: .5rem;
-
-    font-size: 1.35rem;
-    font-weight: 700;
-
-    color: #ffffff;
-}
-
-.footer-texto p {
-
-    margin: .25rem 0;
-
-    color: #d2d2d2;
-
-    line-height: 1.6;
-}
-
-.footer-redes {
-
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.footer-redes a {
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #333333;
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-size: 1.25rem;
-
-    transition:
-        background .25s ease,
-        transform .25s ease;
-}
-
-.footer-redes a:hover,
-.footer-redes a:focus-visible {
-
-    background: var(--verde);
-
-    transform: translateY(-3px);
-}
-
-.footer-creditos {
-
-    border-top: 1px solid rgba(255,255,255,.12);
-
-    padding: 1.25rem;
-
-    text-align: center;
-
-    font-size: .95rem;
-
-    color: #cfcfcf;
-}
-
-.footer-creditos strong {
-
-    color: #ffffff;
-}
-
-.footer-creditos a {
-
-    color: var(--verde);
-
-    text-decoration: none;
-
-    font-weight: 600;
-}
-
-.footer-creditos a:hover,
-.footer-creditos a:focus-visible {
-
-    text-decoration: underline;
-}
-
-.footer-endereco{
-
-    margin-top:1rem;
-}
-
-.footer-endereco a{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:.75rem;
-
-    text-decoration:none;
-
-    color:#d2d2d2;
-
-    transition:color .25s ease;
-}
-
-.footer-endereco a:hover,
-.footer-endereco a:focus-visible{
-
-    color:var(--verde);
-}
-
-.footer-endereco img{
-
-    width:42px;
-
-    height:42px;
-
-    margin-top:.15rem;
-
-    flex-shrink:0;
-
-    object-fit:contain;
-}
-
-.footer-endereco span{
-
-    line-height:1.6;
-}
-
-/* ===========================
-   RESPONSIVIDADE
-=========================== */
-
-@media (max-width: 768px) {
-
-    .footer-container {
-
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .footer-info {
-
-        flex-direction: column;
-    }
-
-    .footer-texto {
-
-        text-align: center;
-    }
-
-    .footer-redes {
-
-        justify-content: center;
-    }
-
-    .footer-logo img {
-
-        width: 80px;
-        height: 80px;
-    }
-
-       .footer-endereco a{
-
-        justify-content:center;
-
-        text-align:left;
-    }
-
-}
 
 /* ===========================
    FOOTER
@@ -782,7 +577,7 @@ footer {
 
 .footer-creditos {
 
-    border-top: 1px solid rgba(255,255,255,.12);
+    border-top: 1px solid rgba(255, 255, 255, .12);
 
     padding: 1.25rem;
 
@@ -800,7 +595,7 @@ footer {
 
 .footer-creditos a {
 
-    color: var(--verde);
+    color: var(--cor-branca);
 
     text-decoration: none;
 
@@ -812,6 +607,51 @@ footer {
 
     text-decoration: underline;
 }
+
+.footer-endereco {
+
+    margin-top: 1rem;
+}
+
+.footer-endereco a {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: .75rem;
+
+    text-decoration: none;
+
+    color: #d2d2d2;
+
+    transition: color .25s ease;
+}
+
+.footer-endereco a:hover,
+.footer-endereco a:focus-visible {
+
+    color: var(--cor-branca);
+}
+
+.footer-endereco img {
+
+    width: 42px;
+
+    height: 42px;
+
+    margin-top: .15rem;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.footer-endereco span {
+
+    line-height: 1.6;
+}
+
 
 /* ===========================
    RESPONSIVIDADE
