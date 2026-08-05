@@ -54,12 +54,17 @@ header {
 }
 
 .div-logo {
-    min-height: 90px;
-    padding: 10px 20px;
+     width: 100%;
+    height: 74px;
+    min-height: 0;
+    padding: 8px 28px;
+
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    background: var(--cor-cinza-claro);
+
+    background-color: var(--cor-cinza-claro);
+    position: relative;
 }
 
 .div-logo a {
@@ -67,11 +72,111 @@ header {
 }
 
 .div-logo img {
-    width: clamp(120px, 10vw, 180px);
-    height: auto;
+    width: auto;
+    height: 150px;
+    max-width: 250px;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 0;
 }
+
+/*===========================================================================
+
+    Campo de pesquisa dentro do site
+
+=============================================================================*/
+.pesquisa-site{
+    width: min(100%, 390px);
+    padding: 0 12px;
+
+    border-radius: 999px;
+    border: solid 1px #000000;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.pesquisa-form{
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.pesquisa-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    color:#000000;
+    background: transparent;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+/*===========================================================
+
+Esconder o Label
+
+============================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+/*===========================================================
+
+Controle Button
+
+============================================================== */
+
+.pesquisa-form button {
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    padding: 0;
+
+     flex: 0 0 auto;
+
+    border: 0;
+
+    background: transparent;
+    color: var(--cor-texto);
+
+    cursor: pointer;
+}
+
+/*===========================================================
+
+Remover o X no campo de pesquisa do imput
+
+============================================================== */
+
+.pesquisa-form input::-webkit-search-cancel-button,
+.pesquisa-form input::-webkit-search-decoration,
+.pesquisa-form input::-webkit-search-results-button,
+.pesquisa-form input::-webkit-search-results-decoration {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.pesquisa-form input[type="search"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 
 /* ==========================================================================
    BOTÃO DO MENU HAMBÚRGUER
@@ -236,6 +341,14 @@ header {
     .menu-item>.submenu-toggle {
         font-size: 15px;
     }
+
+        .pesquisa-site {
+        width: min(100%, 320px);
+    }
+
+    .pesquisa-form input {
+        font-size: 15px;
+    }
 }
 
 /* ==========================================================================
@@ -310,6 +423,13 @@ header {
         border-bottom: 1px solid #e6e6e6;
         font-size: 15px;
         white-space: normal;
+    }
+
+}
+
+@media(max-width: 590px){
+     .pesquisa-site {
+        display: none;
     }
 }
 
