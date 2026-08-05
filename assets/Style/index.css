@@ -102,23 +102,23 @@ header {
 
 .div-logo {
     width: 100%;
-    min-height: 90px;
-    padding: 10px 20px;
+    height: 74px;
+    min-height: 0;
+    padding: 8px 28px;
+
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
     background-color: var(--cor-cinza-claro);
 }
 
-.div-logo a {
-    display: block;
-}
-
 .div-logo img {
-    width: clamp(120px, 10vw, 180px);
-    height: auto;
+    width: auto;
+    height: 150px;
+    max-width: 250px;
     object-fit: contain;
-    border-radius: var(--raio-medio);
+    border-radius: 0;
 }
 
 /* ==========================================================================
@@ -239,7 +239,7 @@ header {
 }
 
 .secao-container>a:hover {
-    background-color: #eeeeee;
+    background-color: var(--cor-cinza-claro);
 }
 
 
@@ -390,14 +390,25 @@ header {
 
 .agenda figure {
     width: 100%;
+    aspect-ratio: 5/3 ;
+    margin: 0 0 15px;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.226);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:visible ;
+    background-color: var(--cor-cinza-claro);
 }
 
 .agenda img {
     width: 100%;
-    aspect-ratio: 5 / 3;
     height: auto;
-    object-fit: cover;
+
+    object-fit: contain;
     object-position: center;
+    
 }
 
 .agenda li div {
@@ -702,7 +713,13 @@ header {
    ========================================================================== */
 
 .noticia-imagem {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0 15px;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.226);
 
     overflow: hidden;
 
@@ -713,8 +730,8 @@ header {
 
 .noticia-imagem img {
 
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: auto;
 
     display: block;
 

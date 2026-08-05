@@ -183,11 +183,12 @@ header {
     }
 
     .div-logo {
-        min-height: 115px;
+        min-height: 78px;
+        padding: 8px 32px;
     }
 
     .div-logo img {
-        width: 210px;
+        width: 170px;
     }
 
     .menu {
@@ -207,12 +208,13 @@ header {
 
 
 @media (min-width: 1920px) {
-    .div-logo {
-        min-height: 105px;
+      .div-logo {
+        min-height: 76px;
+        padding: 8px 28px;
     }
 
     .div-logo img {
-        width: clamp(160px, 8vw, 200px);
+        width: clamp(145px, 7vw, 165px);
     }
 
     .menu {
@@ -242,13 +244,16 @@ header {
 
 
 @media (max-width: 768px) {
-    .div-logo {
-        min-height: 72px;
-        padding: 8px 16px;
+   .div-logo {
+        height: 66px;
+        min-height: 0;
+        padding: 6px 14px;
     }
 
     .div-logo img {
-        width: clamp(110px, 34vw, 140px);
+        width: auto;
+        height: 50px;
+        max-width: 150px;
     }
 
     .menu-toggle {
@@ -314,8 +319,12 @@ header {
 
 
 @media (max-width: 480px) {
-    .div-logo {
-        min-height: 68px;
+      .div-logo {
+        height: 60px;
+    }
+
+    .div-logo img {
+        height: 44px;
     }
 
     .menu-toggle {
