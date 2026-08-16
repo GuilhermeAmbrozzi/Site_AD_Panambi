@@ -1,0 +1,90 @@
+.pagina-pesquisa {
+    min-height: 70vh;
+
+    padding: clamp(30px, 5vw, 80px) 20px;
+
+    background: #f4f4f4;
+}
+
+.pesquisa-resultados {
+    width: min(100%, 1100px);
+
+    margin: 0 auto;
+}
+
+.pesquisa-resultados h1 {
+    margin-bottom: 10px;
+
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+}
+
+#pesquisa-resumo {
+    margin-bottom: 30px;
+
+    color: #555555;
+}
+
+#lista-resultados {
+    display: grid;
+
+    gap: 20px;
+}
+
+.resultado-card {
+    padding: 24px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.resultado-categoria {
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    color: #666666;
+}
+
+.resultado-card h2 {
+    margin: 8px 0 10px;
+}
+
+.resultado-card h2 a {
+    color: #111111;
+
+    text-decoration: none;
+}
+
+.resultado-card p {
+    margin-bottom: 16px;
+
+    line-height: 1.6;
+}
+
+.resultado-link {
+    font-weight: 700;
+
+    color: #222222;
+
+    text-decoration: none;
+}
+
+.resultado-link:hover {
+    text-decoration: underline;
+}
+
+.pesquisa-vazia {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
