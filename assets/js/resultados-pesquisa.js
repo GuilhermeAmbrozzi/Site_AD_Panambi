@@ -24,12 +24,13 @@ const resultados = dadosPesquisa.filter((item) => {
         ...item.palavrasChave
     ].join(" "));
 
-    console.log("Termo original:", termoOriginal);
-    console.log("Termo normalizado:", termo);
-    console.log("Resultados encontrados:", resultados);
-
     return conteudo.includes(termo);
 });
+
+/* Só depois do filter */
+console.log("Termo original:", termoOriginal);
+console.log("Termo normalizado:", termo);
+console.log("Resultados encontrados:", resultados);
 
 if (!termo) {
 
