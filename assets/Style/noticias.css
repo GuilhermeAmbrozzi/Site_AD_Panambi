@@ -1,0 +1,440 @@
+:root {
+    --noticias-largura: 1500px;
+}
+
+
+/* ==========================================================================
+   PÁGINA
+   ========================================================================== */
+
+.pagina-noticias {
+    width: 100%;
+    background: #f3f3f3;
+}
+
+
+/* ==========================================================================
+   LARGURA PADRÃO
+   ========================================================================== */
+
+.noticias-largura {
+    width: min(100%, var(--noticias-largura));
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+
+.noticias-apresentacao {
+    padding:
+        clamp(40px, 5vw, 80px)
+        clamp(16px, 4vw, 40px);
+
+    background: #ffffff;
+}
+
+.noticias-subtitulo {
+    margin: 0 0 8px;
+
+    color: #666666;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.noticias-apresentacao h1 {
+    margin: 0 0 14px;
+
+    color: #181818;
+
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(32px, 4vw, 54px);
+
+    line-height: 1.1;
+}
+
+.noticias-introducao {
+    max-width: 760px;
+    margin: 0;
+
+    color: #555555;
+
+    font-size: clamp(16px, 1.2vw, 19px);
+    line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   FILTROS
+   ========================================================================== */
+
+.noticias-navegacao {
+    padding: 22px clamp(16px, 4vw, 40px);
+
+    background: #e4e4e4;
+
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.noticias-filtros {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.filtro-noticia {
+    padding: 10px 18px;
+
+    border: 1px solid #444444;
+    border-radius: 999px;
+
+    color: #292929;
+    background: transparent;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+.filtro-noticia:hover,
+.filtro-noticia:focus-visible,
+.filtro-noticia.ativo {
+    color: #ffffff;
+    background: #333333;
+}
+
+.filtro-noticia:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   LISTAGEM
+   ========================================================================== */
+
+.noticias-listagem {
+    padding:
+        clamp(35px, 5vw, 70px)
+        clamp(16px, 4vw, 40px);
+}
+
+
+/* ==========================================================================
+   GRID
+   ========================================================================== */
+
+.noticias-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: clamp(20px, 2.5vw, 34px);
+}
+
+
+/* ==========================================================================
+   CARD
+   ========================================================================== */
+
+.noticia-card {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, .15);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, .22);
+}
+
+/*--------------------------------------------------------------------------------------------- 
+
+Esconde os cards filtrados pelo JavaScript. Sem ele por conta do displey: flex  pode acabar sobrescrevendo o comportamento visual do atributo hidden.
+
+-------------------------------------------------------------------------------------------------*/
+.noticia-card[hidden] {
+    display: none;
+}
+
+
+/* ==========================================================================
+   IMAGEM
+   ========================================================================== */
+
+.noticia-imagem {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #dddddd;
+}
+
+.noticia-imagem img {
+    width: 75%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+
+/* ==========================================================================
+   CONTEÚDO
+   ========================================================================== */
+
+.noticia-conteudo {
+    flex: 1;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==========================================================================
+   CATEGORIA E DATA
+   ========================================================================== */
+
+.noticia-informacoes {
+    margin-bottom: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.noticia-categoria {
+    padding: 5px 11px;
+
+    color: #ffffff;
+    background: #444444;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.noticia-informacoes time {
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================================
+   TÍTULO
+   ========================================================================== */
+
+.noticia-conteudo h2 {
+    margin: 0 0 14px;
+
+    font-family: "Rubik", sans-serif;
+
+    font-size: clamp(20px, 1.5vw, 25px);
+
+    line-height: 1.35;
+}
+
+.noticia-conteudo h2 a {
+    color: #151515;
+
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   RESUMO
+   ========================================================================== */
+
+.noticia-conteudo p {
+    flex: 1;
+
+    margin: 0 0 22px;
+
+    color: #555555;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* ==========================================================================
+   LINK
+   ========================================================================== */
+
+.noticia-link {
+    align-self: flex-start;
+
+    color: #222222;
+
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.noticia-link:hover,
+.noticia-link:focus-visible {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   SEM RESULTADOS
+   ========================================================================== */
+
+.nenhuma-noticia {
+    margin: 40px 0;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+/* ==========================================================================
+   FULL HD
+   ========================================================================== */
+
+@media (min-width: 1920px) {
+
+    :root {
+        --noticias-largura: 1700px;
+    }
+}
+
+
+/* ==========================================================================
+   ULTRAWIDE
+   ========================================================================== */
+
+@media (min-width: 2560px) {
+
+    :root {
+        --noticias-largura: 1950px;
+    }
+
+    .noticias-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   NOTEBOOK / TABLET GRANDE
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+
+    .noticias-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   CELULAR / TABLET
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .noticias-apresentacao {
+        text-align: center;
+    }
+
+    .noticias-introducao {
+        margin-inline: auto;
+    }
+
+    .noticias-filtros {
+        justify-content: center;
+    }
+
+    .noticias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .noticia-conteudo {
+        padding: 20px;
+    }
+}
+
+
+/* ==========================================================================
+   CELULAR PEQUENO
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+    .noticias-navegacao {
+        padding-inline: 10px;
+    }
+
+    .noticias-filtros {
+        gap: 7px;
+    }
+
+    .filtro-noticia {
+        padding: 8px 13px;
+
+        font-size: 13px;
+    }
+
+    .noticia-informacoes {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
