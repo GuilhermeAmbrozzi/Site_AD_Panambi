@@ -26,4 +26,4 @@ setInterval(() =>{
     // aqui ele controla quando chega na ultima imaem ele retorna para a primeira.
     index = (index +1 ) % slides.length
     showSlide(index)
-}, 4000)
+}, 6500)
