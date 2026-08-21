@@ -111,7 +111,7 @@ header {
 .slide {
     display: none;
     width: 100%;
-    height: clamp(380px, 40vw, 760px);
+    height: clamp(380px, 70vw, 860px);
     object-fit: cover;
     object-position: center;
 }

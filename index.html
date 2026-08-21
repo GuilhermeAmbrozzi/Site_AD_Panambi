@@ -7,13 +7,12 @@
 
     <link rel="stylesheet" href="./assets/Style/global.css">
     <link rel="stylesheet" href="./assets/Style/index.css">
-    <link rel="icon" href="./assets/Img/logo/Logo-Principal-Vertical.png">
+    <link rel="icon" href="./assets/Img/logo/Logo-Principal-Vertical-Branco.png">
     <title>Bem-Vindo AD-Panambi</title>
 </head>
 
 <body>
     <header>
-
         <div class="div-logo">
             <a href="./index.html">
                 <img src="./assets/Img/logo/Logo-Principal-Horizontal.png" alt="logo Assembleia de Deus">
@@ -25,7 +24,7 @@
                         Pesquisa no site
                     </label>
 
-                    <input type="search" id="pesquisa" nome="pesquisar" placeholder="O que você procura ?">
+                    <input type="search" id="pesquisa" name="pesquisa" placeholder="O que você procura?" autocomplete="off">
 
                     <button type="submit" aria-label="Pesquisar">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"
@@ -71,7 +70,7 @@
                 </div>
             </div>
 
-            <a href="#">Notícias</a>
+            <a href="./pages/noticias.html">Notícias</a>
             <a href="#">Diretoria</a>
             <a href="#">Doações</a>
             <a href="#">Contato</a>
@@ -80,7 +79,7 @@
     </header>
     <main>
         <div class="slides">
-            <img src="./assets/Img/img-Slider/slider-test-1.jpeg" alt="" class="slide active">
+            <img src="./assets/Img/img-Slider/culto-domingo.webp" alt="" class="slide active">
             <img src="./assets/Img/img-Slider/slider-test-2.jpeg" alt="" class="slide">
             <img src="./assets/Img/img-Slider/slider-test-3.jpeg" alt="" class="slide">
             <img src="./assets/Img/img-Slider/slider-test-4.jpeg" alt="" class="slide">
@@ -495,5 +494,8 @@
 <script src="./assets/js/slides.js" defer></script>
 <script src="./assets/js/menu_controle.js" defer></script>
 <script src="./assets/js/modal-aviso.js" defer></script>
+<script src="./assets/js/dados-pesquisa.js"></script>
+<script src="./assets/js/pesquisa.js"></script>
+<script src="./assets/js/resultados-pesquisa.js"></script>
 
 </html>

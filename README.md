@@ -1,138 +1,67 @@
 # Site AD Panambi
 
-Site institucional da **Igreja Evangélica Assembleia de Deus de Panambi/RS**, desenvolvido com HTML, CSS e JavaScript.
+Site institucional da Igreja Evangélica Assembleia de Deus de Panambi/RS.
 
-O objetivo do projeto é disponibilizar informações sobre a igreja, sua história, departamentos, projetos, templos e formas de contato, oferecendo uma navegação moderna, responsiva e de fácil acesso em qualquer dispositivo.
+O projeto tem como objetivo disponibilizar informações sobre a igreja,
+sua história, departamentos, projetos, templos, agenda, notícias e
+formas de contato.
 
----
-
-## Status do Projeto
+## Status
 
 🚧 Em desenvolvimento
 
----
+## Funcionalidades
 
-## Funcionalidades implementadas
-
-### Página Inicial
-
-- Menu de navegação responsivo
-- Menu hambúrguer para dispositivos móveis
+- Página inicial responsiva
+- Menu de navegação e submenus
+- Menu mobile
 - Slider principal
-- Agenda de eventos
-- Seção de departamentos
-- Informações da igreja
-- Links para redes sociais
-- Layout responsivo para:
-  - Celulares
-  - Tablets
-  - Notebooks
-  - Full HD
-  - Monitores Ultrawide
+- Agenda de cultos e eventos
+- Área de notícias
+- Página da História da AD Panambi
+- Página do Projeto Filhos de Issacar
+- Campo de pesquisa no cabeçalho
+- Integração com redes sociais
+- Footer institucional
+- Layout adaptado para celulares, tablets e desktops
 
----
-
-### Página História
-
-- História da Assembleia de Deus em Panambi
-- Organização semântica do conteúdo
-- Imagens históricas com legendas
-- Layout totalmente responsivo
-- Melhor organização do conteúdo
-
----
-
-### Projeto Filhos de Issacar
-
-- Página própria do projeto
-- Identidade visual exclusiva
-- Fundamentação bíblica
-- Objetivos
-- Propósito
-- Princípios
-- Metodologia
-- Informações da 10ª Divisão de Panambi
-- Estrutura preparada para Galeria
-- Estrutura preparada para Relatos
-
----
-
-## Organização do Projeto
-
-```
-assets/
-│
-├── Img/
-│
-├── Style/
-│   ├── global.css
-│   ├── index.css
-│   ├── historia-AD.css
-│   └── filhos-issacar.css
-│
-└── JS/
-    └── script.js
-
-pages/
-│
-├── historia-AD.html
-├── contato.html
-└── Projetos/
-    └── Filhos-Issacar.html
-
-index.html
-```
-
----
-
-## Tecnologias utilizadas
+## Tecnologias
 
 - HTML5
 - CSS3
 - JavaScript
 - Git
 - GitHub
+- GitHub Pages
 
----
+## Estrutura
 
-## Responsividade
+assets/
+├── Img/
+├── Style/
+└── JS/
 
-O projeto foi desenvolvido para oferecer boa experiência nas seguintes resoluções:
+pages/
+├── historia-AD.html
+└── Departamentos/
+    └── Filhos-Issacar.html
 
-- Smartphones
-- Tablets
-- Notebooks
-- Full HD (1920×1080)
-- Ultrawide (2560×1080)
+index.html
 
----
+## Em desenvolvimento
 
-## Melhorias realizadas
-
-- Reestruturação do CSS
-- Organização dos arquivos
-- Padronização dos layouts
-- Melhor aproveitamento de telas grandes
-- Ajustes para dispositivos móveis
-- Correção de diversos problemas de responsividade
-- Melhoria da semântica do HTML
-- Preparação para expansão do projeto
-
----
-
-## Melhorias futuras
-
-- Página de Departamentos
-- Página de Templos
-- Página da Diretoria
-- Página de Doações
-- Galeria de Fotos
-- Área de Notícias
-- Integração com redes sociais
-- Painel administrativo para atualização de conteúdo
-
----
+- Sistema de pesquisa interna
+- Área completa de notícias
+- Galeria de fotos
+- Páginas dos departamentos
+- Páginas dos templos
+- Diretoria
+- Integração definitiva com redes sociais
+- Otimização de imagens
+- SEO
+- Domínio próprio
 
 ## Autor
 
-Desenvolvido por **Guilherme Ambrozzi** para a Igreja Evangélica Assembleia de Deus de Panambi/RS.
+Desenvolvido por Guilherme Aires Ambrozzi para a
+Igreja Evangélica Assembleia de Deus de Panambi/RS.
